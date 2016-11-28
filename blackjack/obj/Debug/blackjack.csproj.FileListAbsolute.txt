@@ -1,0 +1,5 @@
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\bin\Debug\blackjack.exe.config
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\bin\Debug\blackjack.exe
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\bin\Debug\blackjack.pdb
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\obj\Debug\blackjack.exe
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\obj\Debug\blackjack.pdb
