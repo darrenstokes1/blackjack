@@ -3,3 +3,6 @@ C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackj
 C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\bin\Debug\blackjack.pdb
 C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\obj\Debug\blackjack.exe
 C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\obj\Debug\blackjack.pdb
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\bin\Debug\Newtonsoft.Json.dll
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\bin\Debug\Newtonsoft.Json.xml
+C:\Users\Owner\Desktop\TIY\week-2\weekend\New folder\blackjack2\blackjack\blackjack\obj\Debug\blackjack.csprojResolveAssemblyReference.cache

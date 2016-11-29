@@ -166,104 +166,106 @@ namespace blackjack
             // Evaluate hand and ask if player wants another card
             bool playerStillPlays = true;
 
-            while (player1Hand <= 21 && playerStillPlays)
+            while (player1Hand < 21 && playerStillPlays)
+            {
+                Console.WriteLine();
+                Console.WriteLine("Player, would you like another card? Y or N ");
+                // Player wants another card
+                var reply1 = Console.ReadLine();
+                if (reply1 == "y" || reply1 == "Y") // Use Console. ReadLine().ToUpper() in future in var reply
+                {
+                    player1 = randomDeck[counter];
+                    counter++;
+                    player1Hand += player1.GetCardValue();
+                    player1Card++;
+                    // Total player hand
+                    Console.WriteLine();
+                    Console.WriteLine($"Player, your card is the {player1}.");
+                    Console.WriteLine();
+                    Console.WriteLine("Player, so far you have " + player1Hand);
+                    Console.WriteLine();
+
+                }
+
+
+                // Player holds
+
+                if (reply1 == "n" || reply1 == "N")
+                {
+
+                    Console.WriteLine("Player stands at " + player1Hand);
+                    Console.WriteLine();
+                    playerStillPlays = false;
+                }
+            }
+
+
+            // Evaluate hand and ask if dealer wants another card
+            bool dealerStillPlays = true;
+            while (dealerHand <= 16 && dealerStillPlays)
             {
 
-                if (player1Hand < 21)
+
+                Console.WriteLine();
+                Console.WriteLine("Dealer, would you like another card? Y or N ");
+
+                // Dealer wants another card
+                var reply2 = Console.ReadLine();
+                if (reply2 == "y" || reply2 == "Y") // Use Console. ReadLine().ToUpper() in future in var reply
                 {
+                    dealer = randomDeck[counter];
+                    counter++;
+                    dealerHand += dealer.GetCardValue();
+                    dealerCard++;
+                    // Total dealer hand
                     Console.WriteLine();
-                    Console.WriteLine("Player, would you like another card? Y or N ");
-                    string reply1 = Console.ReadLine();
-                    // Player wants another card
-                    if (reply1 == "y" || reply1 == "Y") // Use Console. ReadLine().ToUpper() in future in var reply
-                    {
-                        player1 = randomDeck[counter];
-                        counter++;
-                        player1Hand += player1.GetCardValue();
-                        player1Card++;
-                        // Total player hand
-                        Console.WriteLine();
-                        Console.WriteLine($"Player, your card is the {player1}.");
-                        Console.WriteLine();
-                        Console.WriteLine("Player, so far you have " + player1Hand);
-                        Console.WriteLine();
+                    Console.WriteLine("The house has " + dealerHand);
+                    Console.WriteLine();
 
-                    }
-
-                    // Player holds
-                    else if (reply1 == "n" || reply1 == "N")
-                    {
-                        Console.WriteLine("Player stands at " + player1Hand);
-                        Console.WriteLine();
-                        playerStillPlays = false;
-
-                    }
                 }
-                // Evaluate hand and ask if dealer wants another card
-                bool dealerStillPlays = true;
-                while (dealerHand <= 16 && dealerStillPlays)
+
+                // Dealer holds
+                else if (reply2 == "n" || reply2 == "N")
                 {
-                    if (dealerHand < 16)
-
-                        Console.WriteLine();
-                    Console.WriteLine("Dealer, would you like another card? Y or N ");
-                    string reply1 = Console.ReadLine();
-
-                    // Dealer wants another card
-                    if (reply1 == "y" || reply1 == "Y") // Use Console. ReadLine().ToUpper() in future in var reply
-                    {
-                        dealer = randomDeck[counter];
-                        counter++;
-                        dealerHand += dealer.GetCardValue();
-                        dealerCard++;
-                        // Total dealer hand
-                        Console.WriteLine();
-                        Console.WriteLine("The house has " + dealerHand);
-                        Console.WriteLine();
-                        //Console.WriteLine("Dealer, would you like another card? Y or N ");
-                    }
-                    // Dealer holds
-                    else if (reply1 == "n" || reply1 == "N")
-                    {
-                        Console.WriteLine("House stands at " + dealerHand);
-                        Console.WriteLine();
-                        dealerStillPlays = false;
-                    }
+                    Console.WriteLine("House stands at " + dealerHand);
+                    Console.WriteLine();
+                    dealerStillPlays = false;
                 }
+            }
 
-                // Dealer holds Eval for win
+            // Dealer holds Eval for win
+            {
+                if (player1Hand > 21) // Player exceeds 21
                 {
-                    if (player1Hand > 21) // Player exceeds 21
-                    {
-                        Console.WriteLine("House wins!!...You're over 21");
-                        Console.WriteLine();
-                        Console.WriteLine("The House has " + dealerHand);
+                    Console.WriteLine("House wins!!...You're over 21");
+                    Console.WriteLine();
+                    Console.WriteLine("The House has " + dealerHand);
 
-                    }
-                    else if (dealerHand > 21) // Dealer exceeds 21
-                    {
-                        Console.WriteLine("The House busted! Player wins!");
-                        Console.WriteLine();
-                        Console.WriteLine("The house has " + dealerHand);
-                    }
-                    else if (dealerHand >= player1Hand) // Dealer wins outright
-                    {
-                        Console.WriteLine("The House wins again!");
-                        Console.WriteLine();
-                        Console.WriteLine("The house has " + dealerHand);
-                    }
-
-                    else if (player1Hand > dealerHand)
-                    {
-                        Console.WriteLine("Congrats! Player you win!");
-                        Console.WriteLine();
-                        Console.WriteLine("Player, you have " + player1Hand);
-                    }
-
-                    Console.ReadLine();
                 }
+                else if (dealerHand > 21) // Dealer exceeds 21
+                {
+                    Console.WriteLine("The House busted! Player wins!");
+                    Console.WriteLine();
+                    Console.WriteLine("The house has " + dealerHand);
+                }
+                else if (dealerHand >= player1Hand) // Dealer wins outright
+                {
+                    Console.WriteLine("The House wins again!");
+                    Console.WriteLine();
+                    Console.WriteLine("The house has " + dealerHand);
+                }
+
+                else if (player1Hand > dealerHand)
+                {
+                    Console.WriteLine("Congrats! Player you win!");
+                    Console.WriteLine();
+                    Console.WriteLine("Player, you have " + player1Hand);
+                }
+
+                Console.ReadLine();
             }
         }
     }
-
 }
+
+
